@@ -74,7 +74,7 @@ index fd0c367..7872cde 100644
  	$(AR) -crs $@ -- $^
  
 +$(LIBFILE): $(LIBOBJ)
-+	$(CC) -shared -Wl,-soname,$(SO_NAME) $(LDFLAGS) -o $@ $^
++	$(CC) $(CXXFLAGS) -shared -Wl,-soname,$(SO_NAME) $(LDFLAGS) -o $@ $^
 +
  # Object files
  %.o: %.c .deps/timestamp
@@ -160,7 +160,7 @@ index 1d32943..2f13fff 100644
  	$(AR) -crs $@ -- $^
  
 +$(LIBFILE): $(LIBOBJ)
-+	$(CC) -shared -Wl,-soname,$(SO_NAME) $(LDFLAGS) -o $@ $^
++	$(CXX) $(CXXFLAGS) -shared -Wl,-soname,$(SO_NAME) $(LDFLAGS) -o $@ $^
 +
  # Object files
  %.o: %.cpp .deps/timestamp
