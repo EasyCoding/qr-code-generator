@@ -119,7 +119,7 @@ popd
 
 %files -n libqrcodegen
 %license Readme.markdown
-%{_libdir}/libqrcodegen.so.*
+%{_libdir}/libqrcodegen.so.1*
 
 %files -n libqrcodegen-devel
 %{_includedir}/qrcodegen
@@ -127,7 +127,7 @@ popd
 
 %files -n libqrcodegencpp
 %license Readme.markdown
-%{_libdir}/libqrcodegencpp.so.*
+%{_libdir}/libqrcodegencpp.so.1*
 
 %files -n libqrcodegencpp-devel
 %{_includedir}/qrcodegencpp
