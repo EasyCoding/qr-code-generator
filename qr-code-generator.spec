@@ -122,7 +122,7 @@ popd
 %{_libdir}/libqrcodegen.so.1*
 
 %files -n libqrcodegen-devel
-%{_includedir}/qrcodegen
+%{_includedir}/qrcodegen/
 %{_libdir}/libqrcodegen.so
 
 %files -n libqrcodegencpp
@@ -130,14 +130,14 @@ popd
 %{_libdir}/libqrcodegencpp.so.1*
 
 %files -n libqrcodegencpp-devel
-%{_includedir}/qrcodegencpp
+%{_includedir}/qrcodegencpp/
 %{_libdir}/libqrcodegencpp.so
 
 %files -n python3-qrcodegen
 %license Readme.markdown
 %{python3_sitelib}/qrcodegen.py
 %{python3_sitelib}/__pycache__/*
-%{python3_sitelib}/qrcodegen-*.egg-info
+%{python3_sitelib}/qrcodegen-*.egg-info/
 
 %changelog
 * Mon Jan 06 2020 Vitaly Zaitsev <vitaly@easycoding.org> - 1.5.0-1.20191014git67c6246
