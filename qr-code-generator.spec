@@ -13,7 +13,7 @@ Summary: High-quality QR Code generator library
 URL: https://github.com/nayuki/%{richname}
 Source0: %{url}/archive/%{commit0}/%{name}-%{shortcommit0}.tar.gz
 
-# Backported upstream patch with some modifications.
+# https://github.com/nayuki/QR-Code-generator/pull/72
 Patch100: %{name}-build-fixes.patch
 
 BuildRequires: python3-devel
