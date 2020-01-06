@@ -1,13 +1,17 @@
 %global richname QR-Code-generator
 
+%global commit0 67c62461d380352500fc39557fd9f046b7fe1d18
+%global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
+%global date 20191014
+
 Name: qr-code-generator
 Version: 1.5.0
-Release: 1%{?dist}
+Release: 1.%{date}git%{shortcommit0}%{?dist}
 
 License: MIT
 Summary: High-quality QR Code generator library
 URL: https://github.com/nayuki/%{richname}
-Source0: %{url}/archive/v%{version}/%{name}-%{version}.tar.gz
+Source0: %{url}/archive/%{commit0}/%{name}-%{shortcommit0}.tar.gz
 
 # Backported upstream patch with some modifications.
 Patch100: %{name}-build-fixes.patch
@@ -76,7 +80,7 @@ Secondary goals are compact implementation size and good documentation
 comments.
 
 %prep
-%autosetup -n %{richname}-%{version} -p1
+%autosetup -n %{richname}-%{commit0} -p1
 
 %build
 # Exporting correct build flags...
@@ -136,5 +140,5 @@ popd
 %{python3_sitelib}/qrcodegen-*.egg-info
 
 %changelog
-* Mon Jan 06 2020 Vitaly Zaitsev <vitaly@easycoding.org> - 1.5.0-1
+* Mon Jan 06 2020 Vitaly Zaitsev <vitaly@easycoding.org> - 1.5.0-1.20191014git67c6246
 - Initial SPEC release.
