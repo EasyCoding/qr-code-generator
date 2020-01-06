@@ -12,6 +12,7 @@ Source0: %{url}/archive/v%{version}/%{name}-%{version}.tar.gz
 # Backported upstream patch with some modifications.
 Patch100: %{name}-build-fixes.patch
 
+BuildRequires: python3-devel
 BuildRequires: gcc-c++
 BuildRequires: gcc
 
@@ -61,6 +62,19 @@ Requires: libqrcodegencpp%{?_isa} = %{?epoch:%{epoch}:}%{version}-%{release}
 Development files and headers for high-quality QR Code generator library
 (C++ version).
 
+%package -n python3-qrcodegen
+Summary: High-quality QR Code generator library (Python version)
+BuildArch: noarch
+%{?python_provide:%python_provide python3-qrcodegen}
+
+%description -n python3-qrcodegen
+This project aims to be the best, clearest QR Code generator library in
+multiple languages.
+
+The primary goals are flexible options and absolute correctness.
+Secondary goals are compact implementation size and good documentation
+comments.
+
 %prep
 %autosetup -n %{richname}-%{version} -p1
 
@@ -78,6 +92,11 @@ pushd cpp
 %make_build
 popd
 
+# Building Python version...
+pushd python
+%py3_build
+popd
+
 %install
 # Installing plain C version...
 pushd c
@@ -87,6 +106,11 @@ popd
 # Installing C++ version...
 pushd cpp
 %make_install LIBDIR=%{buildroot}%{_libdir} INCLUDEDIR=%{buildroot}%{_includedir}/qrcodegencpp
+popd
+
+# Installing Python version...
+pushd python
+%py3_install
 popd
 
 %files -n libqrcodegen
@@ -104,6 +128,12 @@ popd
 %files -n libqrcodegencpp-devel
 %{_includedir}/qrcodegencpp
 %{_libdir}/libqrcodegencpp.so
+
+%files -n python3-qrcodegen
+%license Readme.markdown
+%{python3_sitelib}/qrcodegen.py
+%{python3_sitelib}/__pycache__/*
+%{python3_sitelib}/qrcodegen-*.egg-info
 
 %changelog
 * Mon Jan 06 2020 Vitaly Zaitsev <vitaly@easycoding.org> - 1.5.0-1
