@@ -7,7 +7,7 @@ index fd0c367..7872cde 100644
  
  # Recommended compiler flags:
 -CFLAGS += -std=c99 -O
-+CFLAGS ?= -std=c99 -O
++CFLAGS += -std=c99
  
  # Extra flags for diagnostics:
  # CFLAGS += -g -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -fsanitize=undefined,address
@@ -92,7 +92,7 @@ index 1d32943..2f13fff 100644
  
  # Recommended compiler flags:
 -CXXFLAGS += -std=c++11 -O
-+CXXFLAGS ?= -std=c++11 -O
++CXXFLAGS += -std=c++11
  
  # Extra flags for diagnostics:
  # CXXFLAGS += -g -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -fsanitize=undefined,address
