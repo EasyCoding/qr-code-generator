@@ -15,6 +15,7 @@ Patch100: %{name}-build-fixes.patch
 BuildRequires: python3-devel
 BuildRequires: gcc-c++
 BuildRequires: gcc
+BuildRequires: make
 
 %description
 This project aims to be the best, clearest QR Code generator library in
