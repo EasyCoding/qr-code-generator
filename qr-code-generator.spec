@@ -2,7 +2,7 @@
 
 Name: qr-code-generator
 Version: 1.6.0
-Release: 2%{?dist}
+Release: 3%{?dist}
 
 License: MIT
 Summary: High-quality QR Code generator library
@@ -137,6 +137,9 @@ popd
 %{python3_sitelib}/qrcodegen-*.egg-info/
 
 %changelog
+* Wed Jan 27 2021 Fedora Release Engineering <releng@fedoraproject.org> - 1.6.0-3
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_34_Mass_Rebuild
+
 * Wed Jul 29 2020 Fedora Release Engineering <releng@fedoraproject.org> - 1.6.0-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_33_Mass_Rebuild
 
